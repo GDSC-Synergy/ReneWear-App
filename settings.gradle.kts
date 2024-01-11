@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "ReneWear"
 include(":app")
- 
