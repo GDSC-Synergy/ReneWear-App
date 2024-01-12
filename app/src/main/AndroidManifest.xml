@@ -13,6 +13,10 @@
         android:theme="@style/Theme.ReneWear"
         tools:targetApi="31">
         <activity
+            android:name=".SplashScreenActivity"
+            tools:node="replace">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">

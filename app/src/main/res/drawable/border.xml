@@ -1,0 +1,8 @@
+<!-- border.xml di folder res/drawable -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="2dp"
+        android:color="#FF0000" /> <!-- Warna batas yang diinginkan -->
+</shape>
