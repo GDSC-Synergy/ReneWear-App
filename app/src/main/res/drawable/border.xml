@@ -4,5 +4,5 @@
     <solid android:color="@android:color/transparent" />
     <stroke
         android:width="2dp"
-        android:color="#FF0000" /> <!-- Warna batas yang diinginkan -->
+        android:color="#FF0000" />
 </shape>

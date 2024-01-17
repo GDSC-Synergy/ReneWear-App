@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.renewear.R;
 import com.example.renewear.databinding.FragmentHomeBinding;
-
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
@@ -40,7 +39,7 @@ public class HomeFragment extends Fragment {
                 "friendly fashion."};
 
         // Create a custom adapter
-        CustomAdapter adapter = new CustomAdapter(requireContext(), getChildFragmentManager(), data);
+        CustomAdapter adapter = new CustomAdapter(requireContext(), getActivity().getSupportFragmentManager(), data, desc);
 
         // Set the adapter for the GridView
         gridViewHome.setAdapter(adapter);

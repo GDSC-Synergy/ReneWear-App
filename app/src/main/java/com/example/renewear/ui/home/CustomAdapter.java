@@ -1,5 +1,6 @@
 package com.example.renewear.ui.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,15 +15,20 @@ import androidx.fragment.app.Fragment;
 
 import com.example.renewear.R;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.renewear.databinding.FragmentThriftBinding;
 
 public class CustomAdapter extends BaseAdapter {
 
     private final String[] data;
+    private final String[] desc;
     private final LayoutInflater inflater;
     private final FragmentManager fragmentManager;
 
-    public CustomAdapter(Context context, FragmentManager fragmentManager, String[] data) {
+    public CustomAdapter(Context context, FragmentManager fragmentManager, String[] data, String[] desc) {
         this.data = data;
+        this.desc = desc;
         this.inflater = LayoutInflater.from(context);
         this.fragmentManager = fragmentManager;
     }
@@ -51,6 +57,7 @@ public class CustomAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.icon = convertView.findViewById(R.id.icon);
             holder.text = convertView.findViewById(R.id.text);
+            holder.desc = convertView.findViewById(R.id.description);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -61,6 +68,7 @@ public class CustomAdapter extends BaseAdapter {
         holder.icon.setImageResource(icons[position]);
 
         holder.text.setText(data[position]);
+        holder.desc.setText(desc[position]);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,24 +82,32 @@ public class CustomAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private void openNewFragment(String selectedItem) {
-        // Check if the selected item is "Thrift"
-        if ("Thrift".equals(selectedItem)) {
-            Log.d("nav","thrift");
-            Fragment newFragment = new ThriftFragment();
-            Bundle args = new Bundle();
-            args.putString("selectedItem", selectedItem);
-            newFragment.setArguments(args);
+    @SuppressLint("ResourceType")
+    private void openNewFragment(String data) {
+        // Buat instance FragmentTransaction
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, newFragment)
-                    .addToBackStack(null)
-                    .commit();
-        }
+        // Gantilah "ThriftFragment" dengan nama Fragment Anda
+        Fragment thriftFragment = new ThriftFragment();
+
+        // Kustomisasi Bundle (jika perlu) dan tambahkan data yang diperlukan ke fragment
+        Bundle bundle = new Bundle();
+        bundle.putString("dataKey", data);
+        thriftFragment.setArguments(bundle);
+
+        // Gantilah R.id.fragment_container dengan ID container fragment di layout Anda
+        transaction.replace(R.id.fragment_thrift, thriftFragment);
+
+        // Tambahkan transaksi ke back stack agar dapat kembali dengan tombol back
+        transaction.addToBackStack(null);
+
+        // Lakukan transaksi
+        transaction.commit();
     }
 
     private static class ViewHolder {
         ImageView icon;
         TextView text;
+        TextView desc;
     }
 }

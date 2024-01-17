@@ -1,39 +1,31 @@
 package com.example.renewear.ui.home;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.renewear.R;
 import com.example.renewear.databinding.FragmentThriftBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThriftFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ThriftFragment extends Fragment {
+
     private FragmentThriftBinding binding;
-    public ThriftFragment() {
 
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        binding = FragmentThriftBinding.inflate(inflater, container, false);
+//        View root = binding.getRoot();
+        View root = inflater.inflate(R.layout.fragment_thrift, container, false);
+        // Handle UI setup or data binding here if needed
+
+        return root;
     }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentThriftBinding.inflate(inflater, container, false);
-        View rootView = binding.getRoot();
-
-        FrameLayout frameLayout = rootView.findViewById(R.id.fragment_container);
-        TextView textView = new TextView(requireContext());
-        textView.setText("Isi FrameLayout ini");
-        frameLayout.addView(textView);
-
-        return rootView;
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
