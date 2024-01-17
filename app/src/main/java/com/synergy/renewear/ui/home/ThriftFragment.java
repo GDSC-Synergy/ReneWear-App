@@ -1,4 +1,4 @@
-package com.example.renewear.ui.home;
+package com.synergy.renewear.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.renewear.R;
-import com.example.renewear.databinding.FragmentThriftBinding;
+import com.synergy.renewear.R;
+import com.synergy.renewear.databinding.FragmentThriftBinding;
 
 public class ThriftFragment extends Fragment {
 

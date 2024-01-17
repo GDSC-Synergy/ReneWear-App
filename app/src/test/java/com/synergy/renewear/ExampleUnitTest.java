@@ -1,4 +1,4 @@
-package com.example.renewear;
+package com.synergy.renewear;
 
 import org.junit.Test;
 

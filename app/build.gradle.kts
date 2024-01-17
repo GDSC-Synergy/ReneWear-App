@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.renewear"
+    namespace = "com.synergy.renewear"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.renewear"
+        applicationId = "com.synergy.renewear"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -1,16 +1,16 @@
-package com.example.renewear.ui.activity;
+package com.synergy.renewear.ui.profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ActivityViewModel extends ViewModel {
+public class ProfileViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public ActivityViewModel() {
+    public ProfileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is activity fragment");
+        mText.setValue("This is profile fragment");
     }
 
     public LiveData<String> getText() {

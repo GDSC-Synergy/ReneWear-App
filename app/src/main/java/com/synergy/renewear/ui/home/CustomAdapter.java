@@ -1,4 +1,4 @@
-package com.example.renewear.ui.home;
+package com.synergy.renewear.ui.home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,11 +13,11 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.renewear.R;
+import com.synergy.renewear.R;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.renewear.databinding.FragmentThriftBinding;
+import com.synergy.renewear.databinding.FragmentThriftBinding;
 
 public class CustomAdapter extends BaseAdapter {
 
@@ -70,13 +70,10 @@ public class CustomAdapter extends BaseAdapter {
         holder.text.setText(data[position]);
         holder.desc.setText(desc[position]);
 
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle item click here
-                Log.d("Item Clicked", "Position: " + position + ", Data: " + data[position]);
-                openNewFragment(data[position]);
-            }
+        convertView.setOnClickListener(v -> {
+            // Handle item click here
+            Log.d("Item Clicked", "Position: " + position + ", Data: " + data[position]);
+            openNewFragment(data[position]);
         });
 
         return convertView;

@@ -1,8 +1,6 @@
-package com.example.renewear.menu;
+package com.synergy.renewear.menu;
 
-import android.view.Menu;
-
-import com.example.renewear.R;
+import com.synergy.renewear.R;
 
 import java.util.ArrayList;
 
