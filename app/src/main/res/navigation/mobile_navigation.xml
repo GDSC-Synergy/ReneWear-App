@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.renewear.ui.home.HomeFragment"
+        android:name="com.synergy.renewear.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_activity"
-        android:name="com.example.renewear.ui.activity.ActivityFragment"
+        android:name="com.synergy.renewear.ui.activity.ActivityFragment"
         android:label="Activity"
         tools:layout="@layout/fragment_activity" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.renewear.ui.profile.ProfileFragment"
+        android:name="com.synergy.renewear.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

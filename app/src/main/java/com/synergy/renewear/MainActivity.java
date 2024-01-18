@@ -1,4 +1,4 @@
-package com.example.renewear;
+package com.synergy.renewear;
 
 import android.os.Bundle;
 
@@ -10,7 +10,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.renewear.databinding.ActivityMainBinding;
+import com.synergy.renewear.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 

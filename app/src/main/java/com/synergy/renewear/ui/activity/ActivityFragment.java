@@ -1,4 +1,4 @@
-package com.example.renewear.ui.profile;
+package com.synergy.renewear.ui.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.renewear.databinding.FragmentProfileBinding;
+import com.synergy.renewear.databinding.FragmentActivityBinding;
 
-public class ProfileFragment extends Fragment {
+public class ActivityFragment extends Fragment {
 
-    private FragmentProfileBinding binding;
+    private FragmentActivityBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ProfileViewModel profileViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
+        ActivityViewModel activityViewModel =
+                new ViewModelProvider(this).get(ActivityViewModel.class);
 
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
+        binding = FragmentActivityBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textProfile;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textActivity;
+        activityViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

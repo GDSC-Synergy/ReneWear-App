@@ -1,4 +1,4 @@
-package com.example.renewear.menu;
+package com.synergy.renewear.menu;
 
 public class MenuModel {
     private final Integer iconId;
